@@ -4,7 +4,7 @@
 #include <cmath>
 
 #include <fp16.h>
-#include <tables.h>
+#include "tables.h"
 
 
 TEST(FP16_IEEE_TO_FP32_VALUE, normalized_powers_of_2) {

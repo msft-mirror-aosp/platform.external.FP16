@@ -3,7 +3,7 @@
 #include <cstdint>
 
 #include <fp16.h>
-#include <tables.h>
+#include "tables.h"
 
 #if (defined(__i386__) || defined(__x86_64__)) && defined(__F16C__)
 	#include <x86intrin.h>
