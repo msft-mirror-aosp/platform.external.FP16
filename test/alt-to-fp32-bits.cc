@@ -3,7 +3,7 @@
 #include <cstdint>
 
 #include <fp16.h>
-#include <tables.h>
+#include "tables.h"
 
 
 TEST(FP16_ALT_TO_FP32_BITS, normalized_powers_of_2) {
