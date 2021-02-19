@@ -64,7 +64,7 @@ static inline uint32_t fp16_ieee_to_fp32_bits(uint16_t h) {
 	_BitScanReverse(&nonsign_bsr, (unsigned long) nonsign);
 	uint32_t renorm_shift = (uint32_t) nonsign_bsr ^ 31;
 #else
-	uint32_t renorm_shift = __builtin_clz(nonsign);
+	uint32_t renorm_shift = nonsign ? __builtin_clz(nonsign) : 32;
 #endif
 	renorm_shift = renorm_shift > 5 ? renorm_shift - 5 : 0;
 	/*
@@ -293,7 +293,7 @@ static inline uint32_t fp16_alt_to_fp32_bits(uint16_t h) {
 	_BitScanReverse(&nonsign_bsr, (unsigned long) nonsign);
 	uint32_t renorm_shift = (uint32_t) nonsign_bsr ^ 31;
 #else
-	uint32_t renorm_shift = __builtin_clz(nonsign);
+	uint32_t renorm_shift = nonsign ? __builtin_clz(nonsign) : 32;
 #endif
 	renorm_shift = renorm_shift > 5 ? renorm_shift - 5 : 0;
 	/*
